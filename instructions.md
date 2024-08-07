@@ -36,3 +36,7 @@ python3 manage.py makemigrations
 python3 manage.py migrate
 
 python3 manage.py runserver
+
+## Defining the LocalLibrary Models
+python3 manage.py makemigrations
+python3 manage.py migrate
