@@ -30,3 +30,9 @@ python3 -m pip install django~=4.2
 
 django-admin startproject locallibrary .
 
+python3 manage.py startapp catalog
+
+python3 manage.py makemigrations
+python3 manage.py migrate
+
+python3 manage.py runserver
