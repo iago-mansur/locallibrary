@@ -9,7 +9,7 @@ import uuid # Required for unique book instances
 
 
 class Genre(models.Model):
-    """Model representing a book genre."""
+    """Model representing a book genre (e.g. Science Fiction, Non Fiction)."""
     name = models.CharField(
         max_length=200,
         unique=True,
@@ -78,6 +78,16 @@ class Book(models.Model):
         """Returns the URL to access a detail record for this book."""
         return reverse('book-detail', args=[str(self.id)])
 
+    def display_genre(self):
+        """Create a string for the Genre. This is required to display genre in Admin."""
+        return ', '.join(genre.name for genre in self.genre.all()[:3])
+
+    display_genre.short_description = 'Genre'
+
+    class Meta:
+        ordering = ['title', 'author']
+
+
 
 class BookInstance(models.Model):
 
@@ -105,6 +115,10 @@ class BookInstance(models.Model):
 
     class Meta:
         ordering = ['due_back']
+
+    def get_absolute_url(self):
+        """Returns the url to access a particular book instance."""
+        return reverse('bookinstance-detail', args=[str(self.id)])
 
     def __str__(self):
         """String for representing the Model object."""

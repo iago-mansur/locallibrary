@@ -8,11 +8,13 @@ cd locallibrary
 
 sudo pip3 install virtualenvwrapper
 
+"""
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS=' -p /usr/bin/python3 '
 export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
+"""
 
 source ~/.bashrc
 
@@ -40,3 +42,12 @@ python3 manage.py runserver
 ## Defining the LocalLibrary Models
 python3 manage.py makemigrations
 python3 manage.py migrate
+
+## Django admin site
+python3 manage.py createsuperuser
+
+    Username (leave blank to use 'iago'): admin
+    Email address: admin@example.com
+    Password: admin123
+
+python3 manage.py runserver
