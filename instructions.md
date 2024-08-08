@@ -51,3 +51,26 @@ python3 manage.py createsuperuser
     Password: admin123
 
 python3 manage.py runserver
+
+
+
+
+
+
+
+## New session
+pip freeze > requirements.txt
+deactivate
+
+sudo pip3 install virtualenvwrapper
+"""
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS=' -p /usr/bin/python3 '
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
+"""
+source ~/.bashrc
+mkvirtualenv my_django_environment
+pip install --upgrade pip
+pip3 install -r requirements.txt
