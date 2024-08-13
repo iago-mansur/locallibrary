@@ -52,6 +52,29 @@ python3 manage.py createsuperuser
 
 python3 manage.py runserver
 
+## User authentication and permissions
+
+http://127.0.0.1:8000/admin/auth/group/add/
+    Name: Library Members
+    SAVE
+
+http://127.0.0.1:8000/admin/auth/user/add/
+    Username: userone
+    Password: User1123
+    SAVE
+
+http://127.0.0.1:8000/admin/auth/user/2/change/
+
+    Username: userone
+    First name: User
+    Last name: One
+    Email address: user1@example.com
+    Groups: Chosen groups: Library Members
+    SAVE
+
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py runserver
 
 
 
