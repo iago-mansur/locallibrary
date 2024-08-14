@@ -82,6 +82,11 @@ http://127.0.0.1:8000/catalog/book/<uuid:pk>/renew/
 http://127.0.0.1:8000/catalog/author/create/
 
 
+## Testing a Django web application
+
+python3 manage.py test
+python3 manage.py test catalog.tests
+
 
 
 
