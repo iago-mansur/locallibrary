@@ -76,6 +76,11 @@ python3 manage.py makemigrations
 python3 manage.py migrate
 python3 manage.py runserver
 
+## Working with forms
+
+http://127.0.0.1:8000/catalog/book/<uuid:pk>/renew/
+http://127.0.0.1:8000/catalog/author/create/
+
 
 
 
