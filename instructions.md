@@ -88,6 +88,21 @@ python3 manage.py test
 python3 manage.py test catalog.tests
 
 
+## Deploying Django to production
+pip3 install python-dotenv
+export DJANGO_DEBUG=False
+python3 manage.py check --deploy
+pip3 install gunicorn
+pip3 install dj-database-url
+pip3 install psycopg2-binary
+
+? python3 manage.py collectstatic
+
+pip3 install whitenoise
+pip3 freeze > requirements.txt
+
+
+
 
 
 
